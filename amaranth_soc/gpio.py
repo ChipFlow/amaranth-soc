@@ -59,6 +59,9 @@ class PinSignature(wiring.Signature):
             "oe": Out(unsigned(1)),
         })
 
+    def __repr__(self):
+        return super().__repr__(self)
+
 
 class Peripheral(wiring.Component):
     class Mode(csr.Register, access="rw"):
