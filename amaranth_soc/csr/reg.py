@@ -446,7 +446,6 @@ class Register(wiring.Component):
     def __init_subclass__(cls, *, access=None, **kwargs):
         if access is not None:
             cls._access = Element.Access(access)
-            cls.__doc__ = cls._doc_template.format(parameters="")
         super().__init_subclass__(**kwargs)
 
     def __init__(self, fields=None, access=None):
