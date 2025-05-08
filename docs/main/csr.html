@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System on Chip toolkit &mdash; System on Chip toolkit for Amaranth HDL 0.1a1.dev32 documentation</title>
+  <title>CSR &mdash; System on Chip toolkit for Amaranth HDL 0.1a1.dev32 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Memory maps" href="memory.html" />
-    <link rel="prev" title="Amaranth project documentation" href="cover.html" /> 
+    <link rel="next" title="CSR bus" href="csr/bus.html" />
+    <link rel="prev" title="Wishbone bus" href="wishbone/bus.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,10 +50,15 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth/latest/">Language &amp; toolchain</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-stdio/latest/">Standard I/O components</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">System on Chip toolkit</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">System on Chip toolkit</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="memory.html">Memory maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wishbone.html">Wishbone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="csr.html">CSR</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CSR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csr/bus.html">CSR bus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csr/reg.html">CSR registers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csr/action.html">CSR fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
 </ul>
 </li>
@@ -73,9 +78,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="cover.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">System on Chip toolkit</li>
+          <li class="breadcrumb-item"><a href="index.html">System on Chip toolkit</a></li>
+      <li class="breadcrumb-item active">CSR</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/csr.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,37 +89,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="system-on-chip-toolkit">
-<h1>System on Chip toolkit<a class="headerlink" href="#system-on-chip-toolkit" title="Link to this heading"></a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This manual is a work in progress and is seriously incomplete!</p>
-</div>
+  <section id="csr">
+<h1>CSR<a class="headerlink" href="#csr" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="memory.html">Memory maps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="memory.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="memory.html#resources">Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="memory.html#alignment">Alignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="memory.html#windows">Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="memory.html#freezing">Freezing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csr/bus.html">CSR bus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csr/bus.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/bus.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/bus.html#register-interfaces">Register interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/bus.html#bus-interfaces">Bus interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/bus.html#bus-primitives">Bus primitives</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="wishbone.html">Wishbone</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="wishbone/bus.html">Wishbone bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csr/reg.html">CSR registers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csr/reg.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/reg.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/reg.html#fields">Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/reg.html#field-actions">Field actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/reg.html#registers">Registers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="csr.html">CSR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="csr/bus.html">CSR bus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="csr/reg.html">CSR registers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="csr/action.html">CSR fields</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gpio.html">GPIO</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gpio.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpio.html#pin-modes">Pin modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpio.html#pin-interface">Pin interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpio.html#peripheral">Peripheral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csr/action.html">CSR fields</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csr/action.html#basic-fields">Basic fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/action.html#flag-fields">Flag fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csr/action.html#reserved-fields">Reserved fields</a></li>
 </ul>
 </li>
 </ul>
@@ -124,8 +123,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="cover.html" class="btn btn-neutral float-left" title="Amaranth project documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="memory.html" class="btn btn-neutral float-right" title="Memory maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="wishbone/bus.html" class="btn btn-neutral float-left" title="Wishbone bus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="csr/bus.html" class="btn btn-neutral float-right" title="CSR bus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
