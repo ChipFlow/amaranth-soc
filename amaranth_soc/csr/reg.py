@@ -420,8 +420,9 @@ class Register(wiring.Component):
     Arguments
     ---------
     fields : :class:`dict` or :class:`list` or :class:`Field`, optional
-        Collection of register fields. If omitted, a dict is populated from Python :term:`variable
-        annotations <python:variable annotation>`. ``fields`` is used to create
+        Collection of register fields. If omitted, a dict is populated from Python
+        `variable annotations <https://docs.python.org/3/glossary.html#term-variable-annotation>`_.
+        ``fields`` is used to create
         a :class:`FieldActionMap`, :class:`FieldActionArray`, or :class:`FieldAction`,
         depending on its type (:class:`dict`, :class:`list`, or :class:`Field`).
     access : :class:`~.csr.bus.Element.Access`
@@ -435,8 +436,9 @@ class Register(wiring.Component):
     Raises
     ------
     :exc:`ValueError`
-        If ``fields`` is not ``None`` and at least one :term:`variable annotation <python:variable
-        annotation>` is a :class:`Field`.
+        If ``fields`` is not ``None`` and at least one
+        `variable annotation <https://docs.python.org/3/glossary.html#term-variable-annotation>`_
+        is a :class:`Field`.
     :exc:`ValueError`
         If ``element.access`` is not readable and at least one field is readable.
     :exc:`ValueError`

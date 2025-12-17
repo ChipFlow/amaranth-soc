@@ -372,9 +372,10 @@ class MemoryMap:
             Name of the resource. It must not conflict with the name of other resources or windows
             present in this memory map.
         addr : :class:`int`
-            Address of the resource. Optional. If ``None``, the :ref:`implicit next address
-            <memory-implicit-next-address>` will be used. Otherwise, the exact specified address
-            (which must be a multiple of ``2 ** max(alignment, self.alignment)``) will be used.
+            Address of the resource. Optional. If ``None``, the
+            :ref:`implicit next address <memory-implicit-next-address>` will be used.
+            Otherwise, the exact specified address (which must be a multiple of
+            ``2 ** max(alignment, self.alignment)``) will be used.
         size : :class:`int`
             Size of the resource, in minimal addressable units. Rounded up to a multiple of
             ``2 ** max(alignment, self.alignment)``.
@@ -469,10 +470,10 @@ class MemoryMap:
             Name of the window. Optional. It must not conflict with the name of other resources or
             windows present in this memory map.
         addr : :class:`int`
-            Address of the window. Optional. If ``None``, the :ref:`implicit next address
-            <memory-implicit-next-address>` will be used after aligning it to
-            ``2 ** window.addr_width``. Otherwise, the exact specified address (which must be a
-            multiple of ``2 ** window.addr_width``) will be used.
+            Address of the window. Optional. If ``None``, the
+            :ref:`implicit next address <memory-implicit-next-address>` will be used
+            after aligning it to ``2 ** window.addr_width``. Otherwise, the exact specified
+            address (which must be a multiple of ``2 ** window.addr_width``) will be used.
         sparse : :class:`bool`
             Address translation type. Optional. Ignored if the datapath widths of both memory maps
             are equal; must be specified otherwise.
